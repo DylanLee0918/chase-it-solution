@@ -3,14 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Root from "./Root";
 import reportWebVitals from "./reportWebVitals";
+import { MantineProvider, createTheme } from "@mantine/core";
+
+const theme = createTheme({
+  /** Put your mantine theme override here */
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>
+  <MantineProvider theme={theme}>
+    <React.StrictMode>
+      <Root />
+    </React.StrictMode>
+  </MantineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
